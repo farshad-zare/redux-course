@@ -1,1 +1,9 @@
-console.log("everything is OK!");
+function createStore() {
+  let state;
+
+  const getState = () => state;
+
+  return {
+    getState,
+  };
+}
