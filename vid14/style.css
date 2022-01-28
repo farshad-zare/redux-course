@@ -1,0 +1,24 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+}
+
+li p {
+  display: inline;
+}
+
+.todo-item_status {
+  margin-right: 5px;
+}
