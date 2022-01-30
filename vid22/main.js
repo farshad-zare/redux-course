@@ -85,10 +85,19 @@ const check = (store) => (next) => (action) => {
   }
   return next(action);
 };
+
+const logger = (store) => (next) => (action) => {
+  console.group(action.type);
+  console.log("previous state", store.getState());
+  const result = next(action);
+  console.log("current state", store.getState());
+  console.groupEnd();
+  return result;
+};
 //using the store
 const store = Redux.createStore(
   Redux.combineReducers({ todos, goals }),
-  Redux.applyMiddleware(check)
+  Redux.applyMiddleware(check, logger)
 );
 /* ****************************************************************** */
 // UI stuff
